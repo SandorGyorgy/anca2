@@ -65,10 +65,7 @@ Route::get('/preturi', function (){
 })->name('preturi');
 
 
-Route::get('skydivestore/accesories', function ()
-{
-    return view('accesories');
-})->name('accesories');
+
 
 Route::get('skydivestore/helmets', function ()
 {
@@ -80,10 +77,6 @@ Route::get('skydivestore/instruments', function ()
     return view('instruments');
 })->name('instruments');
 
-Route::get('skydivestore/flywear', function ()
-{
-    return view('flywear');
-})->name('flywear');
 
 Route::get('skydivestore/canopies', function ()
 {
@@ -99,6 +92,12 @@ Route::get('/dashboard' , function(){
 return view('dashboard');
 })->name('dashboard');
 
-Route::get('/test' , function(){
-return view();
-})-name('test');
+Route::get('/accesories' , function(){
+    return view('accesories');
+})->name('accesories');
+
+Route::get('/flywear', function(){
+    return view('flyware');
+})->name('flywear');
+
+
