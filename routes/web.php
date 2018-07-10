@@ -97,9 +97,7 @@ Route::get('/dashboard/addCategories' , function(){
     return view('Store\DashBoardAdmin\adaugaCategorii');
 })->name('adaugaCategorii');
 
-Route::get('/dashboard/addProducts' , function(){
-    return view('Store\DashBoardAdmin\adaugaProduse');
-})->name('adaugaProduse');
+Route::get('/dashboard/addProducts' , 'ProductsController@index' )->name('adaugaProduse');
 
 Route::get('/dashboard/addSubcategories' , function(){
     return view('Store\DashBoardAdmin\adaugaSubcategorii');
@@ -116,5 +114,9 @@ Route::get('/accesories' , function(){
 Route::get('/flywear', function(){
     return view('Store\flyware');
 })->name('flywear');
+
+
+Route::post('/add/category' , 'CategoriesController@store');
+Route::post('/add/subcategory' , 'SubcategoriesController@store');
 
 

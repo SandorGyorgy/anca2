@@ -1,8 +1,13 @@
 @extends('Store.dashboard')
 
 @section('adminContents')
+<form class="form-horizontal" method="post" action="/add/category">
 
-    <input type="text" placeholder="pula mea" style="width:300px;">
-    <button class="btn btn-default">O suji</button>
+    <input type="text" name="categorie" placeholder="Adauga categorie" style="width:300px;"><br>
 
+    <button class="btn btn-default">Adauga Categorie</button>
+
+    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+ </form>   
 @stop

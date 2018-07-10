@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Staff extends Model
+class Subcategory extends Model
 {
-    protected $fillable=['staff_role'];
+    protected $fillable=['name'];
 }

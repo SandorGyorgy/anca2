@@ -100,9 +100,8 @@
 <div class="content">
  <div class="col pt-4">
 
-    <h2> Admin Panel </h2>
-
     <div class="container">
+    <h2 class="mb-4"> Admin Panel </h2>
         @yield('adminContents')
     </div>
     
