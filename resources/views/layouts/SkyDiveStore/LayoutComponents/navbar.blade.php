@@ -30,7 +30,7 @@
                             <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
                             <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
                         @else
-                            <li class="nav-item dropdown">
+                            <li class="nav-item dropdown mr-4">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
@@ -45,6 +45,11 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
+                                  @if(Auth::user()->is_admin == 1)
+                                    <a class="dropdown-item" href="{{ route('dashboard') }}">
+                                        Dashboard
+                                    </a>
+                                    @endif
                                 </div>
                             </li>
                         @endguest

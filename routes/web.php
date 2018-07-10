@@ -67,37 +67,54 @@ Route::get('/preturi', function (){
 
 
 
+
+//rutele pentru skydivestore
 Route::get('skydivestore/helmets', function ()
 {
-    return view('helmets');
+    return view('Store\helmets');
 })->name('helmets');
 
 Route::get('skydivestore/instruments', function ()
 {
-    return view('instruments');
+    return view('Store\instruments');
 })->name('instruments');
-
 
 Route::get('skydivestore/canopies', function ()
 {
-    return view('canopies');
+    return view('Store\canopies');
 })->name('canopies');
 
 Route::get('skydivestore/rigs', function ()
 {
-    return view('rigs');
+    return view('Store\rigs');
 })->name('rigs');
 
 Route::get('/dashboard' , function(){
-return view('dashboard');
+return view('Store\dashboard');
 })->name('dashboard');
 
+Route::get('/dashboard/addCategories' , function(){
+    return view('Store\DashBoardAdmin\adaugaCategorii');
+})->name('adaugaCategorii');
+
+Route::get('/dashboard/addProducts' , function(){
+    return view('Store\DashBoardAdmin\adaugaProduse');
+})->name('adaugaProduse');
+
+Route::get('/dashboard/addSubcategories' , function(){
+    return view('Store\DashBoardAdmin\adaugaSubcategorii');
+})->name('adaugaSubcategorii');
+
+Route::get('/dashboard/ProductList' , function(){
+    return view('Store\DashBoardAdmin\listaProduse');
+})->name('listaProduse');
+
 Route::get('/accesories' , function(){
-    return view('accesories');
+    return view('Store\accesories');
 })->name('accesories');
 
 Route::get('/flywear', function(){
-    return view('flyware');
+    return view('Store\flyware');
 })->name('flywear');
 
 
