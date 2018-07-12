@@ -96,17 +96,19 @@
   <a href="{{route('adaugaProduse')}}">Adauga produse</a>
   <a href="{{route('listaProduse')}}">Lista produse</a>
 </div>
+<center>
+<div class="">
+ <div class="col pt-4 ">
 
-<div class="content">
- <div class="col pt-4">
-
-    <div class="container">
-    <h2 class="mb-4"> Admin Panel </h2>
+    <div class="">
+    <h2 class=""> ADMIN PANEL </h2>
+    
         @yield('adminContents')
     </div>
-    
+   
    
                 
   </div>
 </div>
+</center>
 @endsection

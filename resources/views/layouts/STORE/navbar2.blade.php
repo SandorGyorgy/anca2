@@ -1,3 +1,4 @@
+
    <div class="" >      
         <img src="https://skydivestore.ro/img/cms/images/slide_team.jpg" height="383.2px" weight="793.2px"  > 
       

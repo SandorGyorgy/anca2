@@ -91,9 +91,9 @@
 
 @section('content')
 <div class="sidenav">
-  <a href="#contact">Wingsuit</a>
-  <a href="#contact">Jumpsuit</a>
-  <a href="#contact">Tracksuit</a>
+  <a href="/flywear/wingsuit">Wingsuit</a>
+  <a href="/flywear/jumpsuit">Jumpsuit</a>
+  <a href="/flywear/tracksuit">Tracksuit</a>
 </div>
 
 <div class="content">

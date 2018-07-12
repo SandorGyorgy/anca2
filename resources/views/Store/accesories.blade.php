@@ -76,10 +76,10 @@ for (i = 0; i < dropdown.length; i++) {
 
 @section('content')
 <div class="sidenav">
-  <a href="#contact">Consumabile</a>
-  <a href="#contact">Ochelari protectie</a>
-  <a href="#contact">Manusi protectie</a>
-  <a href="#contact">Go-Pro</a>
+  <a href="/accesories/addConsumbile">Consumabile</a>
+  <a href="/accesories/ochelari protectie">Ochelari protectie</a>
+  <a href="/accesories/manusi protectie">Manusi protectie</a>
+  <a href="/accesories/gopro">Go-Pro</a>
 </div>
 <div class="content">
  <div class="col pt-4">

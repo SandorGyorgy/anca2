@@ -89,8 +89,8 @@ for (i = 0; i < dropdown.length; i++) {
 @stop
 @section('content')
 <div class="sidenav">
-  <a href="#contact">Container</a>
-  <a href="#contact">Cutaway</a>
+  <a href="/rigs/container">Container</a>
+  <a href="/rigs/cutaway">Cutaway</a>
   
 
 </div>

@@ -90,9 +90,9 @@ for (i = 0; i < dropdown.length; i++) {
 @stop
 @section('content')
 <div class="sidenav">
-  <a href="#contact">Altimetre</a>
-  <a href="#contact">AAD</a>
-  <a href="#contact">Audibile</a>
+  <a href="/instruments/altimetre">Altimetre</a>
+  <a href="/instruments/aad">AAD</a>
+  <a href="/instruments/audibile">Audibile</a>
 
 </div>
 <div class="content">

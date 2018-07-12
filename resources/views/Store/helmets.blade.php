@@ -89,8 +89,8 @@ for (i = 0; i < dropdown.length; i++) {
 @stop
 @section('content')
 <div class="sidenav">
-  <a href="#contact">Open Face</a>
-  <a href="#contact">Full Face</a>
+  <a href="/helmets/open face">Open Face</a>
+  <a href="/helmets/full face">Full Face</a>
 
 </div>
 <div class="content">
