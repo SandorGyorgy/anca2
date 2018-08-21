@@ -174,9 +174,7 @@ Route::get('/dashboard/addSubcategories' , function(){
     return view('Store\DashBoardAdmin\adaugaSubcategorii');
 })->name('adaugaSubcategorii');
 
-Route::get('/dashboard/ProductList' , function(){
-    return view('Store\DashBoardAdmin\listaProduse');
-})->name('listaProduse');
+Route::get('/dashboard/ProductList' , 'ProductsController@produse')->name('listaProduse');
 
 
 
@@ -227,5 +225,7 @@ Route::get('/flywear/wingsuit' , function(){
 
 Route::post('/add/category' , 'CategoriesController@store');
 Route::post('/add/subcategory' , 'SubcategoriesController@store');
+Route::post('/add/product' , 'ProductsController@store');
+Route::get('/delete/product/{id}' , 'ProductsController@delete')->name('delete');
 
 
