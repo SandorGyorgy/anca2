@@ -19,7 +19,7 @@ class ProductsController extends Controller
     public function store(Request $request){
 
        
-        $category = Category::where('categorie', $request->categorie)->firstOrFail();
+    
         $subcategorie = Subcategory::where('name' , $request->subcategorie)->firstOrFail();
        
         $product = new Product;
@@ -34,9 +34,9 @@ class ProductsController extends Controller
         $destinationPath = public_path('imaginiProduse');
         $imagine->move($destinationPath , $imageName);
         $path = "http://anca2.test/imaginiProduse/".$imageName;
-
         $product->poza = $path;
-         $product->categorie_id = $category->id;
+
+        
          $product->subcategorie_id = $subcategorie->id;
 
          $product->save();
@@ -44,10 +44,15 @@ class ProductsController extends Controller
         return redirect()->back();
     }
 
+
+
     public function produse(){
         $produse = Product::all();
-        return view('Store\DashBoardAdmin\listaProduse', ['produse'=>$produse]);
+        $category = Category::all();
+        return view('Store\DashBoardAdmin\listaProduse', ['produse'=>$produse ,'categorii'=>$category]);
     }
+
+
 
     public function delete($id){
         
@@ -60,5 +65,46 @@ class ProductsController extends Controller
         $produs->delete();
 
         return redirect()->back();
+    }
+
+
+
+    public function show($id){
+
+            $edit = Product::where('id', $id)->firstOrFail();
+
+            return view('Store\DashBoardAdmin\editeazaProdus', ['produs'=>$edit]);
+
+    }
+
+
+
+    public function edit(Request $request){
+        $product = Product::where('id' , $request->id)->firstOrFail();
+
+        $product->nume = $request->titlu;
+        $product->descriere = $request->descriere;
+        $product->pret = $request->pret;
+
+        if($request->poza){
+            $image = $product->poza;
+            $name = explode('http://anca2.test/imaginiProduse/' , $image);
+            $path = public_path('imaginiProduse').'/'.$name[1];
+            \File::delete($path);
+
+            $imagine = $request->poza;
+            $extention = 'jpg';
+            $imageName = time().str_random().".".$extention;
+            $destinationPath = public_path('imaginiProduse');
+            $imagine->move($destinationPath , $imageName);
+            $newPath = "http://anca2.test/imaginiProduse/".$imageName;
+            $product->poza = $newPath;
+        }
+        
+        $product->save();
+
+
+        return redirect()->back();
+        
     }
 }

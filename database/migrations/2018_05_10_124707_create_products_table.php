@@ -19,7 +19,6 @@ class CreateProductsTable extends Migration
             $table->string('descriere');
             $table->float('pret');
             $table->string('poza');
-            $table->integer('categorie_id');
             $table->integer('subcategorie_id');
             
             $table->timestamps();

@@ -16,23 +16,14 @@
      <input type="number" name="pret" placeholder="pret">
     </div>
 
-    <div class="">
-
-        <input list="categorii" placeholder="Alege categoria" name="categorie">
-        <datalist id="categorii">
-        @foreach($categorii as $categorie)
-        <option value = {{$categorie->categorie}}>
-        @endforeach
-        </datalist>
-
-    </div>
+   
 
     <div class="">
 
         <input list="subcategorii" placeholder="Alege subcategoria" name="subcategorie">
         <datalist id="subcategorii">
         @foreach($subcategorii as $subcategorie)
-        <option value = {{$subcategorie->name}}>
+        <option>{{$subcategorie->name}}</option>
         @endforeach
         </datalist>
 
