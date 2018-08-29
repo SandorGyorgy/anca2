@@ -83,6 +83,10 @@ Route::get('/helmets/open face' , function(){
 
 
 
+Route::get('skydivestore/transport', function ()
+{
+    return view('transport');
+})->name('transport');
 
 
 
