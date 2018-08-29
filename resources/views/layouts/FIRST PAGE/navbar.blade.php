@@ -1,7 +1,7 @@
-<div class="">
-<body>
+
 <div class="jumbotron jumbotron-fluid mb-0 " 
- style="background-image: url(http://www.hoteltoyoinn.com.br/wp-content/uploads/2015/05/banner-hotel-toyo-inn05.jpg);"height="370.5px" weight="780.5px"
+ style="background-image: url(http://www.hoteltoyoinn.com.br/wp-content/uploads/2015/05/banner-hotel-toyo-inn05.jpg);
+ "height="370.5px" weight="780.5px"
  style="background-repeat: no-repeat">
   
   <div class="container">
@@ -9,12 +9,10 @@
     <h1 class="display-2">BAIA MARE</h1>
   
 </div>
+</div>
     
 
-  </div>
-
-
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
   </button>
