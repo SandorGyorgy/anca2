@@ -6,24 +6,14 @@
 </button>
 <div class="collapse navbar-collapse" id="navbarNav">
   <ul class="navbar-nav">
-    <li class="nav-item">
-      <a class="nav-link" href="{{route('accesories')}}">Accesories</a>
+
+    @foreach ($categorii as $categorie)
+     <li class="nav-item">
+      <a class="nav-link" href="/store/{{$categorie->categorie}}">{{$categorie->categorie}}</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="{{route('helmets')}}">Helmets</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="{{route('instruments')}}">Instruments</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="{{route('flywear')}}">Flywear</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="{{route('rigs')}}">Rigs</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="{{route('canopies')}}">Canopies</a>
-    </li>
+@endforeach
+
+    
     </ul>
     <ul class=" navbar-nav  ml-auto">
                       @guest
@@ -55,7 +45,5 @@
                       @endguest
       </div>
   </ul>
-  
- 
 </nav>
 
