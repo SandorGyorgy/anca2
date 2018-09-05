@@ -78,20 +78,54 @@
 
 @section('content')
 <div class="sidenav">
+
+@if(count($subcategorii) > 0)
+
 @foreach ($subcategorii as $subCat )
-  <a href="/store/{{$subCat->name}}">{{$subCat->name}}</a>
+  <a href="/store/{{$categorie->categorie}}/{{$subCat->name}}">{{ $subCat->name}}</a>
 @endforeach
+
+ @endif
+
 </div>
 <div class="content">
  <div class="col pt-4">
             <h2>
-                
-                ACCESORIES
+
+
+              @if($subcategorieCurenta == NULL)
+                @if(count($subcategorii) == 0 ) 
+                  Nu exista subcategorii
+                  @else
+                  {{$subcategorii{0}['name']}} 
+               @endif
+               @else
+                {{$subcategorieCurenta->name}}
+             @endif
+
+
             </h2>
-            <h6 class="hidden-sm-down">Shrink page width to see sidebar collapse</h6>
-            <p>3 wolf moon retro jean shorts chambray sustainable roof party. Shoreditch vegan artisan Helvetica. Tattooed Codeply Echo Park Godard kogi, next level irony ennui twee squid fap selvage. Meggings flannel Brooklyn literally small batch, mumblecore
-                PBR try-hard kale chips. Brooklyn vinyl lumbersexual bicycle rights, viral fap cronut leggings squid chillwave pickled gentrify mustache. 3 wolf moon hashtag church-key Odd Future. Austin messenger bag normcore, Helvetica Williamsburg
-                sartorial tote bag distillery Portland before they sold out gastropub taxidermy Vice.</p>
+            <div class="row">
+            
+             @if(count($produse) > 0)
+            @foreach ($produse as $product )
+
+                <div class="card mr-4 mb-4" style="width: 16rem;">
+                    <img class="card-img-top" src="{{$product->poza}}" height="220" width="100%">
+                    <div class="card-body">
+                      <h5 class="card-title">{{$product->nume}}</h5>
+                      <p class="card-text">{{$product->descriere}}</p>
+                      <p class="card-text">{{$product->pret}} RON</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                  </div>
+            @endforeach
+          @else
+          <h1>Nu exista produse</h1>
+          @endif
+
+            </div>
+         
                 
 </div>
 </div>
