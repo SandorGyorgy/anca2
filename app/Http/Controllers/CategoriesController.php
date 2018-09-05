@@ -21,7 +21,8 @@ class CategoriesController extends Controller
 
     public function show($category , $subcategory= NULL){
 
-        $product = [];
+        $product = null;
+        $currentSubcat = null;
         $categorii = Category::all();
         $cat = Category::where('categorie' , $category)->first();
         $subCats = Subcategory::where('category_id' , $cat->id)->get();
@@ -37,7 +38,17 @@ class CategoriesController extends Controller
 
             }
         }
-        return view('Store\StoreInterface\PaginaCategorii', ['subcategorii'=>$subCats , 'categorii'=>$categorii , 'produse'=>$product ,'categorie'=>$cat]);
+        return view('Store\StoreInterface\PaginaCategorii', 
+        ['subcategorii'=>$subCats ,
+         'categorii'=>$categorii , 
+         'produse'=>$product ,
+         'categorie'=>$cat ,
+         'subcategorieCurenta'=>$currentSubcat
+         
+         ]);
+
+
+
         // $currentSubcat = Subcategory::where('name' , $subcategory)->get();
         // return response()->json(['subcategorii'=>$currentSubcat , 'categorii'=>$category ,'categorie curenta'=>$cat]);
 

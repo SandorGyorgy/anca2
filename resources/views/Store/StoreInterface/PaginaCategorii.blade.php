@@ -91,14 +91,19 @@
 <div class="content">
  <div class="col pt-4">
             <h2>
-                
-               @if(count($subcategorii) == 0 ) 
-              Nu exista subcategorii
-               @else
+
+
+              @if($subcategorieCurenta == NULL)
+                @if(count($subcategorii) == 0 ) 
+                  Nu exista subcategorii
+                  @else
                   {{$subcategorii{0}['name']}} 
-               
                @endif
-                
+               @else
+                {{$subcategorieCurenta->name}}
+             @endif
+
+
             </h2>
             <div class="row">
             
