@@ -1,7 +1,7 @@
 @extends('Store.dashboard')
 
 @section('adminContents')
-<br>
+
 <form action="/edit/post" method="post" enctype="multipart/form-data">
 @csrf
 <input hidden value="{{$produs->id}}" name="id">
@@ -26,7 +26,7 @@
 
 <input type="file" name="poza">
 
-<button class="btn btn-info">Editează produs</button>
+<button class="btn btn-info">Editeaza Produs</button>
 
 </form>
 

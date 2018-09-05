@@ -1,28 +1,26 @@
 @extends('Store.dashboard')
 @section('adminContents')
-<br>
+
 <div class="container">
 <form class="form-horizontal" method="post" enctype="multipart/form-data" action="/add/product">
     <div class="">
-         <input type="text" name="Titlu" placeholder="Adaugă titlu" style="width:300px;"><br><br>
+         <input type="text" name="titlu" placeholder="adauga titlu">
     </div>
 
     <div class="">
-        <textarea name="Descriere" placeholder="Descriere" name="Descriere" style="width:300px;">
+        <textarea name="descriere" placeholder="descriere">
         </textarea>
-        <br>
     </div>
-    
-<br>
+
     <div class="">
-     <input type="number" name="Preț" placeholder="Preț" style="width:300px;"><br><br>
+     <input type="number" name="pret" placeholder="pret">
     </div>
 
-
+   
 
     <div class="">
 
-        <input list="subcategorii" placeholder="Alege subcategoria" name="subcategorie" style="width:300px;"><br><br>
+        <input list="subcategorii" placeholder="Alege subcategoria" name="subcategorie">
         <datalist id="subcategorii">
         @foreach($categorii as $subcategorie)
             @foreach ($subcategorie->subcategory as $sub)
@@ -36,9 +34,9 @@
     </div>
 
     <div class="">
-        <input type="file" name="Poză">
+        <input type="file" name="poza">
     </div>
-<br>
+
     <div class="">
         <button class="btn btn-default">Add</button>
     </div>

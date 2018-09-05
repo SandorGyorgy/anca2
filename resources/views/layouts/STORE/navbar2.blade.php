@@ -58,6 +58,6 @@
 
 
 <div class="container content mt-4">
-    
+  <h4 class="">CELE MAI CAUTATE PRODUSE</h4>    
   <h4 class="">REDUCERI</h4>    
 </div>
