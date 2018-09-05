@@ -84,9 +84,9 @@
 
 
 <div class="sidenav">
-  <a href="{{route('adaugaCategorii')}}">Adauga categorii</a>
-  <a href="{{route('adaugaSubcategorii')}}">Adauga subcategorii</a>
-  <a href="{{route('adaugaProduse')}}">Adauga produse</a>
+  <a href="{{route('adaugaCategorii')}}">Adaugă categorii</a>
+  <a href="{{route('adaugaSubcategorii')}}">Adaugă subcategorii</a>
+  <a href="{{route('adaugaProduse')}}">Adaugă produse</a>
   <a href="{{route('listaProduse')}}">Lista produse</a>
 </div>
 <center>

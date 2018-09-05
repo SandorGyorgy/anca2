@@ -7,9 +7,9 @@
                 <div class="row mt-2">
                     <div class="col-6">
                         <ul class="list-unstyled">
-                            <li><a href="">Termeni si conditii</a></li>
-                            <li><a href="">Metode plata</a></li>
-                            <li><a href="">Tip transport</a></li>
+                            <li><a href="skydivestore/transport">Termeni si conditii</a></li>
+                            <li><a href="skydivestore/transport">Metode plata</a></li>
+                            <li><a href="skydivestore/transport">Tip transport</a></li>
                             
                         </ul>
                     </div>
