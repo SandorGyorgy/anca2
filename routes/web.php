@@ -21,42 +21,42 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-
 Route::get('/tandemjump', function (){
-
     return view('tandem');
 })->name('tandemjump');
 
-Route::get('/affjump', function (){
 
+Route::get('/affjump', function (){
     return view('aff');
 })->name('affjump');
 
-Route::get('/advancedjump', function (){
 
+Route::get('/advancedjump', function (){
     return view('advanced');
 })->name('advancedjump');
 
-Route::get('/about', function (){
 
+Route::get('/about', function (){
     return view('about');
 })->name('about');
 
-Route::get('/staff', function (){
 
+Route::get('/staff', function (){
     return view('staff');
 })->name('staff');
 
-Route::get('/rules', function (){
 
+
+Route::get('/rules', function (){
     return view('rules');
 })->name('rules');
 
 
-Route::get('/preturi', function (){
 
+Route::get('/preturi', function (){
     return view('preturi');
 })->name('preturi');
+
 
 
 
@@ -66,11 +66,16 @@ Route::get('/preturi', function (){
 
 
 Route::get('/skydivestore', function ()
-{   $categories = Category::all();
-    return view('store' , ['categorii'=>$categories]);
+{    return view('store');
 })->name('skydivestore');
 
 Route::get('/store/{category}/{subcategory?}' , 'CategoriesController@show');
+
+
+Route::get('/cart' , function(){
+return view('Store\StoreInterface\Cart');});
+
+Route::get('/add/{products}' , 'OrdersController@addToCart');
 
 
 //sectiunea utilizator
@@ -84,24 +89,25 @@ Route::get('/store/{category}/{subcategory?}' , 'CategoriesController@show');
 
     //rute pentru paginile adminului
         Route::get('/dashboard' , function(){
-            $categories = Category::all();
-        return view('Store\dashboard' ,  ['categorii'=>$categories]);
+          
+        return view('Store\dashboard');
         })->name('dashboard');
 
         Route::get('/dashboard/addCategories' , function(){
-            $category = Category::all();
-            return view('Store\DashBoardAdmin\adaugaCategorii' , ['categorii' => $category]);
+           
+            return view('Store\DashBoardAdmin\adaugaCategorii');
         })->name('adaugaCategorii');
 
         Route::get('/dashboard/addProducts' , 'ProductsController@index' )->name('adaugaProduse');
 
         Route::get('/dashboard/addSubcategories' , function(){
-            $category = Category::all();
-            return view('Store\DashBoardAdmin\adaugaSubcategorii' , ['categorii' => $category]);
+            return view('Store\DashBoardAdmin\adaugaSubcategorii');
         })->name('adaugaSubcategorii');
 
         Route::get('/dashboard/ProductList' , 'ProductsController@produse')->name('listaProduse');
-
+        Route::get('/plus/{id}' , 'OrdersController@add');
+        Route::get('/substract/{id}' , 'OrdersController@substract');
+        Route::get('/delete/item/{id}' , 'OrdersController@delete');
 
 
     //rute pentru actiunile adminului

@@ -9,6 +9,8 @@ class Category extends Model
     public function subcategory(){
         return $this->hasMany('App\Subcategory');
     }
+
+   
     
     protected $fillable=['categorie'];
 }

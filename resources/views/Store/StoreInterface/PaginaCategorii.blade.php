@@ -1,5 +1,5 @@
 @extends('layouts.SkyDiveStore.storeIndex')
-
+@csrf
 @section('styles')
 <style>
     /* Fixed sidenav, full height */
@@ -116,7 +116,7 @@
                       <h5 class="card-title">{{$product->nume}}</h5>
                       <p class="card-text">{{$product->descriere}}</p>
                       <p class="card-text">{{$product->pret}} RON</p>
-                      <a href="#" class="btn btn-primary">Adauga in cos</a>
+                      <a href="/add/{{$product->id}}"  class="btn btn-primary">Adauga in cos</a>
                     </div>
                   </div>
             @endforeach

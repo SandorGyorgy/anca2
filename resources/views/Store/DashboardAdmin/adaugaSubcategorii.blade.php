@@ -6,7 +6,7 @@
 
  <input list="categorii" placeholder="Alege categoria" name="categorie">
         <datalist id="categorii">
-        @foreach($categorii as $categorie)
+        @foreach($categories as $categorie)
         <option>{{$categorie->categorie}}</option>
         @endforeach
         </datalist>

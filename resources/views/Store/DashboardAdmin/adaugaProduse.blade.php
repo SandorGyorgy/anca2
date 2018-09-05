@@ -22,9 +22,8 @@
 
         <input list="subcategorii" placeholder="Alege subcategoria" name="subcategorie">
         <datalist id="subcategorii">
-        @foreach($categorii as $subcategorie)
+        @foreach($categories as $subcategorie)
             @foreach ($subcategorie->subcategory as $sub)
-                
               <option>{{$subcategorie->categorie}} -- {{$sub->name}}</option>
 
             @endforeach

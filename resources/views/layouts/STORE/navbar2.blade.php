@@ -11,7 +11,8 @@
 </button>
 <div class="collapse navbar-collapse" id="navbarNav">
   <ul class="navbar-nav">
-@foreach ($categorii as $categorie)
+
+@foreach ($categories as $categorie)
      <li class="nav-item">
       <a class="nav-link" href="/store/{{$categorie->categorie}}">{{$categorie->categorie}}</a>
     </li>
@@ -26,6 +27,9 @@
                           <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
                           <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
                       @else
+                            <li class="nav-item mr-2">
+                                <a href="/cart" class="nav-link"> <i class="fas fa-shopping-cart"></i>  Cos <span class="badge"  style="color:red;">{{$items}}</span></a>
+                            </li>
                           <li class="nav-item dropdown mr-4">
                               <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                   {{ Auth::user()->name }} <span class="caret"></span>

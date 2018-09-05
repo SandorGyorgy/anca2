@@ -39,18 +39,13 @@ class CategoriesController extends Controller
             }
         }
         return view('Store\StoreInterface\PaginaCategorii', 
-        ['subcategorii'=>$subCats ,
-         'categorii'=>$categorii , 
+        ['subcategorii'=>$subCats , 
          'produse'=>$product ,
          'categorie'=>$cat ,
          'subcategorieCurenta'=>$currentSubcat
          
          ]);
 
-
-
-        // $currentSubcat = Subcategory::where('name' , $subcategory)->get();
-        // return response()->json(['subcategorii'=>$currentSubcat , 'categorii'=>$category ,'categorie curenta'=>$cat]);
 
 
     }
