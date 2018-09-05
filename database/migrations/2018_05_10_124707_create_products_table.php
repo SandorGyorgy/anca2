@@ -20,6 +20,7 @@ class CreateProductsTable extends Migration
             $table->float('pret');
             $table->string('poza');
             $table->integer('subcategorie_id');
+            $table->integer('categorie_id');
             
             $table->timestamps();
         });

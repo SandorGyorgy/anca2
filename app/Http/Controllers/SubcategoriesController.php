@@ -12,7 +12,7 @@ class SubcategoriesController extends Controller
         $category = Category::where('categorie' , $request->categorie)->firstOrFail();
 
         $subcategory->name = $request->subcategorie;
-        $subcategory->category = $category->id;
+        $subcategory->category_id = $category->id;
         
         $subcategory->save();
         return redirect()->back();

@@ -10,17 +10,19 @@ class ProductsController extends Controller
 {
     public function index(){
 
-        $categories = Category::all();
-        $subcategory = Subcategory::all();
+        $categories = Category::with('subcategory')->get();
+        
 
-        return view('Store\DashBoardAdmin\adaugaProduse', ['categorii'=>$categories , 'subcategorii'=> $subcategory]);
+        return view('Store\DashBoardAdmin\adaugaProduse', ['categorii'=>$categories]);
+       
     }
 
     public function store(Request $request){
 
-       
+        $test = explode(' -- ' , $request->subcategorie);
     
-        $subcategorie = Subcategory::where('name' , $request->subcategorie)->firstOrFail();
+       $subcategorie = Subcategory::where('name' , $test[1])->firstOrFail();
+       $categorie = Category::where('categorie' , $test[0])->firstOrFail();
        
         $product = new Product;
         $product->nume = $request->titlu;
@@ -38,10 +40,14 @@ class ProductsController extends Controller
 
         
          $product->subcategorie_id = $subcategorie->id;
+         $product->categorie_id = $categorie->id;
 
          $product->save();
 
         return redirect()->back();
+
+      
+        // return response()->json($test);
     }
 
 
