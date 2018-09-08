@@ -3,14 +3,10 @@
 @section('adminContents')
 
 @php
-
     $counter = 1;
-    $total= 0 ;
-
 @endphp
 
 <div class="container">
-
 
 
 <table class="table text-center">
@@ -40,7 +36,7 @@
 
       @endif
       <td> {{$comanda->total}} RON</td>   
-      <td> <a class="btn btn-success">Vizualizeaza</a> </td>   
+      <td> <a class="btn btn-success" href="/show/order/{{$comanda->id}}">Vizualizeaza</a> </td>   
     </tr>
 
 @endforeach

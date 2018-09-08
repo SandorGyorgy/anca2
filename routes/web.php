@@ -116,6 +116,7 @@ Route::get('/orders' , 'OrdersController@orders');
 
         Route::get('/dashboard/ProductList' , 'ProductsController@produse')->name('listaProduse');
         Route::get('/user/orders' , 'OrdersController@admin');
+        Route::get('/show/order/{id}' , 'OrdersController@showOrder');
 
     
 
@@ -128,5 +129,6 @@ Route::get('/orders' , 'OrdersController@orders');
         Route::get('/delete/product/{id}' , 'ProductsController@delete')->name('delete');
         Route::get('/show/product/{id}' , 'ProductsController@show')->name('show');
         Route::post('/edit/post' , 'ProductsController@edit')->name('edit');
+        Route::post('/update/order' , 'OrdersController@update');
 
 //sectiunea de admin

@@ -101,4 +101,22 @@ class OrdersController extends Controller
         return view('Store\DashboardAdmin\orders' , ['orders'=> $orders]);
     }
 
+    public function showOrder($id){
+
+        $order = Order::where('id' , $id)->first();
+
+        return view('Store\DashboardAdmin\singleOrder' , ['order' => $order]);
+
+    }
+
+    public function update(Request $request){
+
+        $order = Order::where('id' , $request->id)->first();
+        $order->status = $request->status;
+        $order->update();
+
+        return redirect()->back();
+
+    }
+
 }

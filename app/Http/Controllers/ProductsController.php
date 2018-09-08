@@ -34,6 +34,7 @@ class ProductsController extends Controller
         $extention = 'jpg';
         $imageName = time().str_random().".".$extention;
         $destinationPath = public_path('imaginiProduse');
+
         $imagine->move($destinationPath , $imageName);
         $path = "http://anca2.test/imaginiProduse/".$imageName;
         $product->poza = $path;
@@ -45,9 +46,6 @@ class ProductsController extends Controller
          $product->save();
 
         return redirect()->back();
-
-      
-        // return response()->json($test);
     }
 
 
@@ -78,7 +76,6 @@ class ProductsController extends Controller
     public function show($id){
 
             $edit = Product::where('id', $id)->firstOrFail();
-
             return view('Store\DashBoardAdmin\editeazaProdus', ['produs'=>$edit]);
 
     }
