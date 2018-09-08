@@ -13,13 +13,7 @@
     /* Fixed sidenav, full height */
     .sidenav {
       height: 100%;
-      width: 200px;
-      position: fixed;
-      z-index: 1;
-      top: 50;
-      left: 0;
-      
-      overflow-x: hidden;
+      width: 150px;
       padding-top: 20px;
     }
 
@@ -82,18 +76,21 @@
 
 
 
+<div class="row">
 
-<div class="sidenav">
+
+<div class="sidenav col-md-2">
   <a href="{{route('adaugaCategorii')}}">Adauga categorii</a>
   <a href="{{route('adaugaSubcategorii')}}">Adauga subcategorii</a>
   <a href="{{route('adaugaProduse')}}">Adauga produse</a>
   <a href="{{route('listaProduse')}}">Lista produse</a>
+  <a href="/user/orders">Comenzi</a>
 </div>
-<center>
-<div class="">
+
+<div class="col-md-9">
  <div class="col pt-4 ">
 
-    <div class="">
+    <div class="text-center">
     <h2 class=""> ADMIN PANEL </h2>
     
         @yield('adminContents')
@@ -103,8 +100,8 @@
                 
   </div>
 </div>
-</center>
 
+</div>
 
 @include('layouts.SkyDiveStore.LayoutComponents.footer')
 

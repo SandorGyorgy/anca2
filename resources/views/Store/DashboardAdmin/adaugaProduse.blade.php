@@ -2,6 +2,7 @@
 @section('adminContents')
 
 <div class="container">
+
 <form class="form-horizontal" method="post" enctype="multipart/form-data" action="/add/product">
     <div class="">
          <input type="text" name="titlu" placeholder="adauga titlu">

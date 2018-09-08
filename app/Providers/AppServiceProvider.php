@@ -19,21 +19,24 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $user = auth()->user();
+       
         
         view()->composer('*', function ($view) 
         {
-            $cart = Cart::where('user_id', Auth::user()->id)->get();
             $items = 0;
-            if(count($cart) > 0){
-               
-                foreach($cart as $item){
-                    $items +=  $item->quantity;
-                    $product = Product::where('id' , $item->product_id)->get(); 
-                    $item['name'] = $product[0]->nume;
+            $cart = [];
+            if(auth()->user()){
+                $cart = Cart::where('user_id', Auth::user()->id)->where('order_id' , null)->get();
+                if(count($cart) > 0){
+                    
+                    foreach($cart as $item){
+                        $items +=  $item->quantity;
+                        $product = Product::where('id' , $item->product_id)->get(); 
+                        $item['name'] = $product[0]->nume;
+                    }
                 }
             }
-            $view->with('cart', $cart)->with('items' , $items);    
+                $view->with('cart', $cart)->with('items' , $items);    
         });  
         $categories = Category::all();
         View::share('categories' , $categories);

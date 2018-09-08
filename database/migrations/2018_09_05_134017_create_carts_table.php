@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCartTable extends Migration
+class CreateCartsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -19,7 +19,7 @@ class CreateCartTable extends Migration
             $table->integer('product_id');
             $table->integer('quantity');
             $table->float('subtotal');
-            $table->boolean('is_ordered');
+            $table->integer('order_id')->nullable();
             $table->timestamps();
         });
     }

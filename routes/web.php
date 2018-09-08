@@ -77,6 +77,18 @@ return view('Store\StoreInterface\Cart');});
 
 Route::get('/add/{products}' , 'OrdersController@addToCart');
 
+Route::get('/plus/{id}' , 'OrdersController@add');
+
+Route::get('/substract/{id}' , 'OrdersController@substract');
+
+Route::get('/delete/item/{id}' , 'OrdersController@delete'); 
+
+Route::get('/checkout' , function(){
+    return view('Store\StoreInterface\checkOut');
+});
+
+Route::post('/order' , 'OrdersController@order');
+Route::get('/orders' , 'OrdersController@orders');
 
 //sectiunea utilizator
 
@@ -89,12 +101,10 @@ Route::get('/add/{products}' , 'OrdersController@addToCart');
 
     //rute pentru paginile adminului
         Route::get('/dashboard' , function(){
-          
         return view('Store\dashboard');
         })->name('dashboard');
 
         Route::get('/dashboard/addCategories' , function(){
-           
             return view('Store\DashBoardAdmin\adaugaCategorii');
         })->name('adaugaCategorii');
 
@@ -105,9 +115,10 @@ Route::get('/add/{products}' , 'OrdersController@addToCart');
         })->name('adaugaSubcategorii');
 
         Route::get('/dashboard/ProductList' , 'ProductsController@produse')->name('listaProduse');
-        Route::get('/plus/{id}' , 'OrdersController@add');
-        Route::get('/substract/{id}' , 'OrdersController@substract');
-        Route::get('/delete/item/{id}' , 'OrdersController@delete');
+        Route::get('/user/orders' , 'OrdersController@admin');
+
+    
+
 
 
     //rute pentru actiunile adminului

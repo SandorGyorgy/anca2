@@ -28,7 +28,16 @@
                                   {{ Auth::user()->name }} <span class="caret"></span>
                               </a>
 
+
                               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    @if(Auth::user()->is_admin == 1)
+                                  <a class="dropdown-item" href="{{ route('dashboard') }}">
+                                      Dashboard
+                                  </a>
+                                  @endif
+                                 <a class="dropdown-item" href="/orders">
+                                      Comenzi
+                                  </a>
                                   <a class="dropdown-item" href="{{ route('logout') }}"
                                      onclick="event.preventDefault();
                                                    document.getElementById('logout-form').submit();">
@@ -38,11 +47,9 @@
                                   <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                       @csrf
                                   </form>
-                                @if(Auth::user()->is_admin == 1)
-                                  <a class="dropdown-item" href="{{ route('dashboard') }}">
-                                      Dashboard
-                                  </a>
-                                  @endif
+                               
+
+
                               </div>
                           </li>
                       @endguest

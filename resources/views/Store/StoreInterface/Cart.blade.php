@@ -66,21 +66,13 @@ $total= 0 ;
         </a></td>
     </tr>
   @endforeach
-  <tr>
-  <th></th>
-  <th></th>
-  <th></th>
-  <th><h4>  TOTAL </h4></th>
-  </tr>
+ 
     <tr>
       <th></th>
       <td></td>
-     
-      <td><button class="btn btn-success">Check Out</button></td>
-      <td><h4>
-      {{$total}} RON
-      
-      </h4></td>
+      <td> <h4>  TOTAL </h4> </td>
+      <td> <h4> {{$total}} RON </h4> </td>
+      <td><a href="/checkout" class="btn btn-success">Check Out</a></td>
       
     </tr>
     
