@@ -117,7 +117,8 @@ class ProductsController extends Controller
             $products2 = $products->random(8);
         }elseif(count($products) >= 4){
             $products2 = $products->random(4);
-
+        }else{
+            $products2 = null;
         }
 
       

@@ -19,6 +19,7 @@
 
 <div class="container">
 
+@if (count($products) >= 4)
 
 <div class="row">
   @foreach($products as $product)
@@ -34,6 +35,14 @@
  @endforeach
         
 </div>
+
+
+@else
+<h1>
+Nu exista nici un produs !    
+</h1>
+@endif
+
 
 </div>
 
