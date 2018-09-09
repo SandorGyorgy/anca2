@@ -65,9 +65,7 @@ Route::get('/preturi', function (){
 //sectiunea utilizator
 
 
-Route::get('/skydivestore', function ()
-{    return view('store');
-})->name('skydivestore');
+Route::get('/skydivestore', 'ProductsController@getRandom' )->name('skydivestore');
 
 Route::get('/store/{category}/{subcategory?}' , 'CategoriesController@show');
 
@@ -89,6 +87,7 @@ Route::get('/checkout' , function(){
 
 Route::post('/order' , 'OrdersController@order');
 Route::get('/orders' , 'OrdersController@orders');
+Route::get('/single/order/{id}' , 'OrdersController@returnOrderToUser');
 
 //sectiunea utilizator
 

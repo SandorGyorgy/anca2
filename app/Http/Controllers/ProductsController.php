@@ -110,4 +110,17 @@ class ProductsController extends Controller
         return redirect()->back();
         
     }
+    public function getRandom(){
+
+        $products = Product::all();
+        if(count($products) >= 8){
+            $products2 = $products->random(8);
+        }elseif(count($products) >= 4){
+            $products2 = $products->random(4);
+
+        }
+
+      
+        return view('store' , ['products' => $products2]);
+    }
 }

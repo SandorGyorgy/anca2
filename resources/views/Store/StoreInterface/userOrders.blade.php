@@ -34,7 +34,7 @@
 
                     @endif
                     <td> {{$comanda->total}} RON</td>   
-                    <td> <a class="btn btn-success">Vizualizeaza</a> </td>   
+                    <td> <a class="btn btn-success" href="/single/order/{{$comanda->id}}">Vizualizeaza</a> </td>   
                     </tr>
                 @endforeach
             

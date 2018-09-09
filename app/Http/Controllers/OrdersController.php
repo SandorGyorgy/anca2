@@ -85,7 +85,7 @@ class OrdersController extends Controller
         $cart->each->update(['order_id' => $order->id]);
 
        }
-        return response()->json();
+       return redirect('/orders');
     }
 
     public function orders(){
@@ -104,7 +104,6 @@ class OrdersController extends Controller
     public function showOrder($id){
 
         $order = Order::where('id' , $id)->first();
-
         return view('Store\DashboardAdmin\singleOrder' , ['order' => $order]);
 
     }
@@ -116,6 +115,24 @@ class OrdersController extends Controller
         $order->update();
 
         return redirect()->back();
+
+    }
+
+    public function returnOrderToUser($id){
+
+        $user = Auth::user();
+        $order = Order::where('user_id' , $user->id)->where('id' , $id)->first();
+        $items = Cart::where('order_id' , $order->id)->get();
+        
+        foreach($items as $item){
+            $extra = Product::where('id' , $item->product_id)->first();
+             $item["name"] = $extra->nume;
+        };
+        $order['items'] = $items;
+
+        return view('Store\StoreInterface\userSingleOrder', ['order'=>$order]);
+       
+      
 
     }
 

@@ -18,6 +18,8 @@
 
 @yield('content')
 
+
+
 @include('layouts.SkyDiveStore.LayoutComponents.footer')
 
 

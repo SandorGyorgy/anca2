@@ -11,12 +11,34 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
  integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
  crossorigin="anonymous">
-
     <title></title>
 
 </head>
 
+@include('layouts.STORE.navbar2')
 
+<div class="container">
+
+
+<div class="row">
+  @foreach($products as $product)
+                <div class="card mr-4 mb-4" style="width: 16rem;">
+                    <img class="card-img-top" src="{{$product->poza}}" height="220" width="100%">
+                    <div class="card-body">
+                      <h5 class="card-title">{{$product->nume}}</h5>
+                      <p class="card-text">{{$product->descriere}}</p>
+                      <p class="card-text">{{$product->pret}} RON</p>
+                      <a href="/add/{{$product->id}}"  class="btn btn-primary">Adauga in cos</a>
+                    </div>
+                  </div>
+ @endforeach
+        
+</div>
+
+</div>
+
+
+@include('layouts.STORE.footer')
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -24,5 +46,3 @@
 
 
 
-@include('layouts.STORE.navbar2')
-@include('layouts.STORE.footer')

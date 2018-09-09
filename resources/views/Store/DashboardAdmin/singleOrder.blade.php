@@ -1,6 +1,5 @@
-@extends('Store.dashboard')
-
-@section('adminContents')
+@extends('layouts.SkyDiveStore.storeIndex')
+@section('content')
 
 
 <div class="container">
